@@ -15,13 +15,23 @@ Supports Django Versions: 3.2.
 ## Installation
 
 ```shell
-$ pip install ...
+$ pip install https://github.com/bboogaard/auth0_sso/archive/refs/heads/main.zip
 ```
 
 ## Usage
 
-Add `auth0_sso` and `social_django` to `INSTALLED_APPS` before `django.contrib.admin`, then add these settings to set
-up the auth0 connection::
+Add `auth0_sso`,`social_django` to `INSTALLED_APPS`, and copy the 'templates\admin' folder from the package dir to one of your project's template dirs.
+Add these lines to your `urls.py`:
+
+```python
+urlpatterns = [
+    ...,
+    path('', include('social_django.urls')),
+    path('', include('auth0_sso.urls', namespace='auth0_sso')),
+    ...
+]
+```
+Add these settings for setting up your auth0 connection:
 
 ```python
 import environ
