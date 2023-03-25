@@ -1,9 +1,7 @@
 from django.conf import settings as django_settings
 
 
-DEFAULTS = {
-    'ADMIN_ROLE': 'django_admin'
-}
+DEFAULTS = {}
 
 
 class Settings:

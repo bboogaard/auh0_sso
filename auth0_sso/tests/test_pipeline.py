@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 from social_django.models import UserSocialAuth
 
+from auth0_sso.client import Auth0ClientException
 from auth0_sso.pipeline import user_role
 from .utils import social_test_backend_factory
 
@@ -18,7 +19,7 @@ class TestPipeline(TestCase):
         self.backend = social_test_backend_factory('auth0', self.auth_user)
 
     def test_user_role(self, mock_request):
-        mock_request.return_value = [{'name': 'django_admin'}]
+        mock_request.return_value = [{'name': 'my_admin_role'}]
 
         user_role(self.backend.strategy, {}, self.backend, 'asdf', mock.Mock(), self.user)
         self.user.refresh_from_db()
@@ -41,3 +42,8 @@ class TestPipeline(TestCase):
         self.user.refresh_from_db()
         self.assertFalse(self.user.is_staff)
         self.assertTrue(self.user.has_perm('auth.view_user'))
+
+    def test_with_error(self, mock_request):
+        mock_request.side_effect = Auth0ClientException()
+
+        user_role(self.backend.strategy, {}, self.backend, 'asdf', mock.Mock(), self.user)

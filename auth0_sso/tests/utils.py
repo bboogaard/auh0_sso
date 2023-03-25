@@ -1,26 +1,6 @@
-from typing import Dict, List, Optional, Union
+from typing import Optional
 
-from auth0_sso.client import Auth0ClientException
 from social_django.models import UserSocialAuth
-
-
-class Auth0TestClient:
-
-    error: Optional[Auth0ClientException] = None
-
-    response: Union[Dict, List]
-
-    def setup(self, response: Union[Dict, List], error: Optional[Auth0ClientException] = None):
-        self.response = response
-        self.error = error
-
-    def request(self, method: str, path: str, **kwargs) -> Union[Dict, List]:
-        if self.error:
-            raise self.error
-        return self.response
-
-
-auth0_test_client = Auth0TestClient()
 
 
 class SocialTestUserMixin:
