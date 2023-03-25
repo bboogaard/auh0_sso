@@ -62,6 +62,6 @@ LOGOUT_REDIRECT_URL = '/admin/login/'
 Add additional settings for mapping roles and permissions:
 
 ```python
-AUTH0_SSO_ADMIN_ROLE = 'django_admin'
+AUTH0_SSO_ADMIN_ROLE = 'my_admin_role'
 AUTH0_SSO_APP_PERMISSIONS = ['myapp']
 ```
