@@ -1,0 +1,7 @@
+pytest
+pytest-cov
+pytest-django==4.5.2
+django==3.2
+python-jose==3.3.0
+social-auth-app-django==5.1.0
+requests==2.28.2

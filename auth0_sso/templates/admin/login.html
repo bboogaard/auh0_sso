@@ -1,0 +1,25 @@
+{% extends "admin/login.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div id="content-main">
+
+{% if user.is_authenticated %}
+<p class="errornote">
+{% blocktranslate trimmed %}
+    You are authenticated as {{ username }}, but are not authorized to
+    access this page.
+{% endblocktranslate %}
+</p>
+{% endif %}
+
+<form action="{% url 'social:begin' 'auth0' %}" method="get" id="login-form">
+  <p>Click on the button below to log in to the admin environment.</p>
+  <div class="submit-row">
+    <input type="submit" value="{% translate 'Log in' %}">
+  </div>
+</form>
+
+</div>
+{% endblock %}
