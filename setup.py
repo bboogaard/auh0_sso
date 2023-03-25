@@ -8,7 +8,7 @@ setuptools.setup(name='auth0_sso',
                  long_description=open('README.md').read().strip(),
                  author='Bram Boogaard',
                  author_email='padawan@hetnet.nl',
-                 url='http://path-to-my-packagename',
+                 url='https://github.com/bboogaard/auth0_sso',
                  packages=['auth0_sso'],
                  install_requires=[
                      'pytest',
