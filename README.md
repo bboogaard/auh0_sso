@@ -31,6 +31,13 @@ urlpatterns = [
     ...
 ]
 ```
+
+Run migrations:
+
+```python
+python manage.py migrate
+```
+
 Add these settings for setting up your auth0 connection:
 
 ```python
@@ -67,11 +74,4 @@ AUTHENTICATION_BACKENDS = {
 LOGIN_URL = '/login/auth0/'
 LOGIN_REDIRECT_URL = '/admin/'
 LOGOUT_REDIRECT_URL = '/admin/login/'
-```
-
-Add additional settings for mapping roles and permissions:
-
-```python
-AUTH0_SSO_ADMIN_ROLE = 'my_admin_role'
-AUTH0_SSO_APP_PERMISSIONS = ['myapp']
 ```
