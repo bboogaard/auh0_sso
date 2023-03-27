@@ -9,7 +9,7 @@ setuptools.setup(name='auth0_sso',
                  author='Bram Boogaard',
                  author_email='padawan@hetnet.nl',
                  url='https://github.com/bboogaard/auth0_sso',
-                 packages=['auth0_sso'],
+                 packages=find_packages(include=['auth0_sso', 'auth0_sso.*']),
                  install_requires=[
                      'pytest',
                      'pytest-cov',
