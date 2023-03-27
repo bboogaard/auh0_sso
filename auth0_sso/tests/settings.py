@@ -73,9 +73,6 @@ LOGIN_URL = '/login/auth0/'
 LOGIN_REDIRECT_URL = '/admin/'
 LOGOUT_REDIRECT_URL = '/admin/login/'
 
-AUTH0_SSO_ADMIN_ROLE = 'my_admin_role'
-AUTH0_SSO_APP_PERMISSIONS = ['auth']
-
 SECRET_KEY = 'asdf'
 
 ROOT_URLCONF = 'auth0_sso.tests.urls'
