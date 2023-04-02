@@ -64,10 +64,10 @@ SOCIAL_AUTH_PIPELINE = (
     'auth0_sso.pipeline.user_role'
 )
 
-AUTHENTICATION_BACKENDS = {
+AUTHENTICATION_BACKENDS = (
     'social_core.backends.auth0.Auth0OAuth2',
     'django.contrib.auth.backends.ModelBackend'
-}
+)
 
 LOGIN_URL = '/login/auth0/'
 LOGIN_REDIRECT_URL = '/admin/'
