@@ -1,4 +1,4 @@
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.db import models
 
 # noinspection PyUnresolvedReferences
@@ -27,3 +27,26 @@ class Auth0UserRole(models.Model):
 
     def natural_key(self):
         return self.auth0_role,
+
+
+class Auth0UserProfile(models.Model):
+
+    user = models.OneToOneField(User, related_name='auth0_user_profile', on_delete=models.CASCADE)
+
+    created_at = models.DateTimeField()
+
+    updated_at = models.DateTimeField()
+
+    email = models.EmailField()
+
+    name = models.CharField(max_length=100)
+
+    nickname = models.CharField(max_length=100)
+
+    picture = models.ImageField(upload_to='images/')
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name

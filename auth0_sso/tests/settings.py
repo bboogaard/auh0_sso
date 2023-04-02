@@ -77,3 +77,5 @@ SECRET_KEY = 'asdf'
 
 ROOT_URLCONF = 'auth0_sso.tests.urls'
 SITE_ID = 1
+
+USE_TZ = True
