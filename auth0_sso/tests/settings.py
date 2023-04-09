@@ -16,7 +16,8 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     'social_django',
     "auth0_sso",
-    "django.contrib.admin"
+    "django.contrib.admin",
+    "admin_tool_button"
 ]
 
 MIDDLEWARE = [
