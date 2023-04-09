@@ -17,8 +17,10 @@ setup(name='auth0_sso',
          'django==3.2',
          'python-jose==3.3.0',
          'social-auth-app-django==5.1.0',
-         'Pillow==8.2.0'
+         'Pillow==8.2.0',
+         'admin_tool_button'
      ],
+     dependency_links=['https://github.com/bboogaard/admin_tool_button/archive/refs/heads/master.zip#egg=admin_tool_button'],
      license='MIT License',
      zip_safe=False,
      keywords='Auth0 SSO',
