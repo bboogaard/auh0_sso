@@ -13,7 +13,11 @@ class Auth0UserRoleQuerySet(models.QuerySet):
 
 class Auth0UserRole(models.Model):
 
+    auth0_role_id = models.CharField(max_length=20, unique=True, null=True)
+
     auth0_role = models.CharField(max_length=32, unique=True)
+
+    description = models.TextField(blank=True)
 
     groups = models.ManyToManyField(Group, blank=True, related_name='auth0_user_roles')
 
