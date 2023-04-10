@@ -18,7 +18,7 @@ setup(name='auth0_sso',
          'python-jose==3.3.0',
          'social-auth-app-django==5.1.0',
          'Pillow>=8.2.0',
-         'admin-tool-button==1.0.3a0'
+         'admin-tool-button==1.0.4a0'
      ],
      license='MIT License',
      zip_safe=False,
