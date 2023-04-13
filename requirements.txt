@@ -7,3 +7,4 @@ social-auth-app-django==5.1.0
 requests==2.28.2
 Pillow==8.2.0
 admin-tool-button==1.0.5a0
+pseudo_cron==1.0.0
